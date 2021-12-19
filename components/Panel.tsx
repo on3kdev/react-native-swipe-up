@@ -1,21 +1,19 @@
 import React, { FC } from "react";
-import { View, StyleSheet, Text, TouchableOpacity, Alert } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 
 interface Props {
   panelButton: boolean;
   setPanelButton: (value: boolean) => void;
 }
 
-export const Panel: FC<Props> = ({ panelButton, setPanelButton }) => {
-  return (
-    <View
-      style={styles.panel}
-      onTouchStart={() => panelButton && setPanelButton(false)}
-    >
-      <Text>Your Content</Text>
-    </View>
-  );
-};
+export const Panel: FC<Props> = ({ panelButton, setPanelButton }) => (
+  <View
+    style={styles.panel}
+    onTouchStart={() => panelButton && setPanelButton(false)}
+  >
+    <Text>Your Content</Text>
+  </View>
+);
 
 const styles = StyleSheet.create({
   panel: {
